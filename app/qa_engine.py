@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-groq_api_key = "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"
+groq_api_key = os.environ.get("GROQ_API_KEY")
 llm = ChatGroq(api_key=groq_api_key, model_name="llama3-8b-8192")
 embeddings = HuggingFaceEmbeddings()
 
