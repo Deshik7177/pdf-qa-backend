@@ -32,6 +32,10 @@ def _get_unique_filename(filename: str) -> str:
         counter += 1
     return unique_name
 
+@app.get("/")
+async def root():
+    return {"message": "Welcome to PDF QA Backend! 👋"}
+
 @router.post("/upload")
 async def upload_pdf(file: UploadFile = File(...), db: Session = Depends(get_db)):
     if not file.filename.endswith(".pdf"):
