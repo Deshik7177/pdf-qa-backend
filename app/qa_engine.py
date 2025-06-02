@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 groq_api_key = os.environ.get("GROQ_API_KEY")
-llm = ChatGroq(api_key=groq_api_key, model_name="llama3-8b-8192")
+llm = ChatGroq(api_key=groq_api_key, model_name="all-MiniLM-L6-v2")
 embeddings = HuggingFaceEmbeddings()
 
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
